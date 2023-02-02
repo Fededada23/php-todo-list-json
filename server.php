@@ -14,9 +14,14 @@ if (isset($_POST['todoItem']) && trim($_POST['todoItem']) != '') {
 
     file_put_contents('todo-list.json', json_encode($todo_list, JSON_PRETTY_PRINT));
 }
-if (isset($_POST['deleteTask']))
-    unset($todo_list[$_POST['deleteTask']]);
+if (isset($_POST['delete'])) {
+   
+    unset($todo_list[$_POST['delete']]);
+   
+    file_put_contents('todo-list.json', json_encode($todo_list, JSON_PRETTY_PRINT));
 
+}
+    
 
 header('Content-Type: application/json');
 echo json_encode($todo_list);

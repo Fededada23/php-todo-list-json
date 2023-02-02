@@ -14,7 +14,7 @@ createApp({
 
         });
     },
-    //Funzione per aggiungere elementi nella lista
+
     methods: {
         addToDoItem() {
             const data = {
@@ -27,5 +27,16 @@ createApp({
                 this.todoList = response.data;
             })
         },
+        deleteTask(index) {
+            const data = {
+                delete: index
+            }
+            axios.post(this.apiUrl, data, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            }).then((response) => {
+                this.todoList = response.data
+            });
+        }
+
     },
 }).mount('#app');

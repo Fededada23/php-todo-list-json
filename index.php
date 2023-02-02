@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.0/axios.min.js" integrity="sha512-A6BG70odTHAJYENyMrDN6Rq+Zezdk+dFiFFN6jH1sB+uJT3SYMV4zDSVR+7VawJzvq7/IrT/2K3YWVKRqOyN0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -20,7 +19,12 @@
                     <h2 class="text-center my-5">To-Do-List</h2>
                     <ul class="list-unstyled list-group text-center">
                         <li class="p-2 list-group-item animate__animated animate__bounceIn animate__delay-0.5s" v-for="todo in todoList">
-                            {{todo.language}}
+                            <div class="d-flex justify-content-between">
+                                <div>{{todo.language}}</div>
+                                <div>
+                                    <button class="btn btn-square btn-danger" @click="deleteTask(index)">cancella</button>
+                                </div>
+                            </div>    
                         </li>
                     </ul>
                     <div class="col-12 mt-5 d-flex">

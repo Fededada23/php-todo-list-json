@@ -18,11 +18,11 @@
                 <div class="col-6">
                     <h2 class="text-center my-5">To-Do-List</h2>
                     <ul class="list-unstyled list-group text-center">
-                        <li class="p-2 list-group-item animate__animated animate__bounceIn animate__delay-0.5s" v-for="todo in todoList">
+                        <li class="p-2 list-group-item animate__animated animate__bounceIn animate__delay-0.5s" v-for="(todo,index) in todoList">
                             <div class="d-flex justify-content-between">
                                 <div>{{todo.language}}</div>
                                 <div>
-                                    <button class="btn btn-square btn-danger" @click="deleteTask(index)">cancella</button>
+                                    <button class="btn btn-square btn-danger" @click="deleteTodo(index)">cancella</button>
                                 </div>
                             </div>    
                         </li>
